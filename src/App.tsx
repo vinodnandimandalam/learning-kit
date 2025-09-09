@@ -1,26 +1,20 @@
-import { useState } from 'react'
-import Greet from './components/greet/Greet'
+// import Application from './components/application/Application'
+// import Skills from './components/skills/Skills'
+// import Counter from './components/counter/Counter'
+import { AppProviders } from "./components/providers/App-providers";
+import { MuiMode } from "./components/mui/MuiMode";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+    <AppProviders>
+      <div>
+        <MuiMode />
+        {/* <Application/> 
+      <Skills skills={["HTML", "CSS", "JavaScript"]} />
+      <Counter/> */}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <Greet/>
-    </>
-  )
+    </AppProviders>
+  );
 }
 
-export default App
+export default App;
